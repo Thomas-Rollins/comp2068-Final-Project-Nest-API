@@ -3,6 +3,7 @@ import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { BooksService } from './books.service';
 import { Book } from './interfaces/book.interface';
+import {Logger} from '@nestjs/common';
 
 @Controller('Books')
 export class BooksController
@@ -13,6 +14,7 @@ export class BooksController
   @Get()
   async findAll(): Promise<Book[]>
   {
+    Logger.log('findAll BooksService Called.');
     return this.booksService.findAll();
   }
 
