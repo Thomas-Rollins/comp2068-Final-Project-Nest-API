@@ -1,7 +1,5 @@
 import { IsArray, IsDate, IsNumber, IsNumberString, IsOptional, IsString } from 'class-validator';
 
-
-
 export class UpdateBookDto {
   @IsOptional()
   @IsString()

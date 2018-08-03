@@ -31,3 +31,7 @@ export const BookSchema = new mongoose.Schema({
     type: Number,
   },
 });
+
+BookSchema.virtual('book_ID').get(function() {
+  return this._id;
+});
