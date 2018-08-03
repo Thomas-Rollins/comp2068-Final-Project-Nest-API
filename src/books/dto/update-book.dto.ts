@@ -1,4 +1,4 @@
-import { IsArray, IsDate, IsNumber, IsNumberString, IsOptional, IsString } from 'class-validator';
+import { IsDate, IsNumber, IsNumberString, IsOptional, IsString } from 'class-validator';
 
 export class UpdateBookDto {
   @IsOptional()
@@ -8,8 +8,7 @@ export class UpdateBookDto {
   @IsString()
    author: string;
   @IsOptional()
-  @IsArray()
-   genres: string[];
+  genres: string[]; // TODO: Correct update to properly handle Genres[]. Unique constraint + non-array handling.
   @IsDate()
   @IsOptional()
    publishdate: Date;

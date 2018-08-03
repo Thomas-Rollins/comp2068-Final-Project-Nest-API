@@ -29,7 +29,7 @@ export class BooksController
   @UsePipes(new ValidationPipe({transform: true}))
   async create(@Body() createBookDto: CreateBookDto)
   {
-    this.booksService.create(createBookDto);
+    return this.booksService.create(createBookDto);
   }
 
   // Update
