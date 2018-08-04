@@ -1,4 +1,4 @@
-import { ArrayNotEmpty, ArrayUnique, IsInt, IsISBN, IsISO8601, IsNumber, IsOptional, IsString, Max, Min, MinLength } from 'class-validator';
+import { IsInt, IsISBN, IsISO8601, IsNumber, IsOptional, IsString, Max, Min, MinLength } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class CreateBookDto {
@@ -6,11 +6,9 @@ export class CreateBookDto {
   readonly title: string;
   @IsString()
   readonly author: string;
-  @ArrayNotEmpty()
   @MinLength(3, { each: true })
-  @ArrayUnique()
-  readonly genres: string[];
-  @IsISO8601() // ISO1806 Date standard... it's a standard for a reason.
+  readonly genres: string[3];
+  @IsISO8601({ message: 'The publish date must be a date in the form of YYYY-MM-DD' }) // ISO1806 Date standard... it's a standard for a reason.
   @IsOptional()
   readonly publishdate: Date;
   @IsString()
