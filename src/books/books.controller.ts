@@ -21,6 +21,7 @@ export class BooksController
   @Get('/:id')
   async show(@Param('id') id: string)
   {
+    Logger.log(JSON.stringify('findByID() called with id: ' + id));
     return await this.booksService.show(id);
   }
 
@@ -36,6 +37,8 @@ export class BooksController
   @Put('/:id')
   @UsePipes(new ValidationPipe({transform: true, skipMissingProperties: true }))
   async update(@Param('id') id: string, @Body() updateBookDto: UpdateBookDto){
+    Logger.log('UpdateBook BooksService Called on id: ' + id);
+    Logger.log(JSON.stringify(updateBookDto));
     return await this.booksService.update(id, updateBookDto);
   }
 
