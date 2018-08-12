@@ -29,7 +29,7 @@ export const BookSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['Want to Read', 'Currently Reading', 'Finished Read'],
+    enum: ['Want to Read', 'Currently Reading', 'Finished Reading'],
     required: true,
   },
   rating: {
