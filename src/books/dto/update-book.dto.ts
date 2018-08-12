@@ -8,7 +8,7 @@ export class UpdateBookDto {
   @IsString()
    author: string;
   @IsOptional() // TODO: update validation to a list of possible genres.
-  genres: string[3];
+  genres: string;
   @IsOptional()
   @IsISO8601()
    publishdate: Date;

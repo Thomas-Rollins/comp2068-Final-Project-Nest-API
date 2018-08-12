@@ -9,11 +9,12 @@ export const BookSchema = new mongoose.Schema({
     type: String,
       required: 'The Book must have an author.',
   },
-  genres: [String]
+  genres: {
+    type: String,
+  }
   ,
   synopsis: {
     type: String,
-    required: 'The Book must have a synopsis.',
   },
   publishdate: {
     type: Date,
