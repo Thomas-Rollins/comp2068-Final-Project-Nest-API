@@ -26,7 +26,7 @@ export class CreateBookDto {
   readonly pagecount: number;
   // x-www-form-urlencoded always returns strings - Ensures it is transformed and validates properly
   @Transform(value => Number.isNaN(+value) ? 0 : +value)
-  @IsNumber()
+  // @IsNumber()
   // @Min(1)
  //  @Max(10)
   readonly rating: number;
