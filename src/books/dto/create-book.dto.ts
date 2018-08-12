@@ -6,7 +6,7 @@ export class CreateBookDto {
   readonly title: string;
   @IsString()
   readonly author: string;
-  @MinLength(3, { each: true })
+  @IsOptional()
   readonly genres: string[3]; // TODO: update validation to a list of possible genres.
   @IsISO8601({ message: 'The publish date must be a date in the form of YYYY-MM-DD' }) // ISO1806 Date standard... it's a standard for a reason.
   @IsOptional()
