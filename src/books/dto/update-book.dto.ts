@@ -24,5 +24,7 @@ export class UpdateBookDto {
   @IsNumber()
   @IsOptional()
    rating: number;
-
+  @IsString()
+  @IsOptional()
+  status: string;
 }

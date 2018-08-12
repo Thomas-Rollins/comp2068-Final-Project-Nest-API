@@ -14,8 +14,8 @@ import { DatabaseModule } from '../database/database.module';
 export class AuthModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {
     consumer
-      .apply(passport.authenticate('jwt', { session: false }))
-      .forRoutes({ path: '/users/', method: RequestMethod.DELETE });
+      .apply(passport.authenticate('jwt', { session: false }));
+     // .forRoutes({ path: '/users/', method: RequestMethod.DELETE });
     // { path: '/books/', method: RequestMethod.PATCH },
     // { path: '/books/', method: RequestMethod.POST },
     // { path: '/books/', method: RequestMethod.PUT },

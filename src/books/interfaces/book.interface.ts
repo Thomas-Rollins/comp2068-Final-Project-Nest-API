@@ -9,4 +9,5 @@ export interface Book extends Document {
   readonly isbn13: string;
   readonly pagecount: number;
   readonly rating: number;
+  readonly status: string;
 }

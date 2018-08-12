@@ -17,7 +17,7 @@ export class AuthService {
       secretOrKey = 'secret';
     const user = { email: userDto.email };
     const token = jwt.sign(user, secretOrKey, { expiresIn });
-    Logger.log('Token created');
+    // Logger.log('Token created');
     return {
       expires_in: expiresIn,
       access_token: token,

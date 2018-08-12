@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Logger, Param, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Logger, Param, Post, Put, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { BooksService } from './books.service';
@@ -29,7 +29,7 @@ export class BooksController
   @UsePipes(new ValidationPipe({transform: true}))
   async create(@Body() createBookDto: CreateBookDto)
   {
-    Logger.log('Create Book called');
+   // Logger.log('Create Book called');
     return this.booksService.create(createBookDto);
   }
 

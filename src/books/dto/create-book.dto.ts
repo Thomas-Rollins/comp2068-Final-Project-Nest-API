@@ -28,4 +28,5 @@ export class CreateBookDto {
   // @Min(1)
  //  @Max(10)
   readonly rating: number;
+  readonly status: string;
 }
