@@ -6,7 +6,6 @@ export class UserDto {
   email: string;
   @IsString()
   @IsNotEmpty()
-  @MinLength(6)
   password: string;
   firstName: string;
   lastName: string;

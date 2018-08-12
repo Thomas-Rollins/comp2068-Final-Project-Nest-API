@@ -1,6 +1,5 @@
 import * as mongoose from 'mongoose';
 import * as bcrypt from 'bcrypt';
-import { Logger } from '@nestjs/common';
 import { BookSchema } from '../books/books.schema';
 
 const UserSchema = new mongoose.Schema({
