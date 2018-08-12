@@ -2,9 +2,9 @@ import { IsInt, IsISBN, IsISO8601, IsNumber, IsOptional, IsString, Max, Min, Min
 import { Transform } from 'class-transformer';
 
 export class CreateBookDto {
-  @IsString()
+  // @IsString()
   readonly title: string;
-  @IsString()
+  // @IsString()
   readonly author: string;
   @IsOptional()
   readonly genres: string[3]; // TODO: update validation to a list of possible genres.
@@ -21,13 +21,13 @@ export class CreateBookDto {
   readonly isbn13: string;
   // x-www-form-urlencoded always returns strings - Ensures it is transformed and validates properly
   @Transform(value => Number.isNaN(+value) ? 0 : +value)
-  @IsInt()
-  @Min(1)
+  // @IsInt()
+  // @Min(1)
   readonly pagecount: number;
   // x-www-form-urlencoded always returns strings - Ensures it is transformed and validates properly
   @Transform(value => Number.isNaN(+value) ? 0 : +value)
   @IsNumber()
-  @Min(1)
-  @Max(10)
+  // @Min(1)
+ //  @Max(10)
   readonly rating: number;
 }
