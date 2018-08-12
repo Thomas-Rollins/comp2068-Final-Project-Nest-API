@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 import * as bcrypt from 'bcrypt';
 import { Logger } from '@nestjs/common';
+import { BookSchema } from '../books/books.schema';
 
 const UserSchema = new mongoose.Schema({
     email: {
@@ -13,6 +14,16 @@ const UserSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+  firstName: {
+    type: String,
+    unique: false,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    unique: false,
+    required: true,
+  },
     role: {
       type: String,
       enum: ['User', 'Admin'],
@@ -48,5 +59,9 @@ UserSchema.methods.comparePassword = async function(candidatePassword, cb) {
     cb(null, isMatch);
   });
 };
+
+BookSchema.virtual('book_ID').get(function() {
+  return this._id;
+});
 
 export { UserSchema };

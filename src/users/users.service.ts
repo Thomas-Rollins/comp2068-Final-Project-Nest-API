@@ -15,7 +15,7 @@ export class UsersService {
   }
 
   // Get: Show
-  async findOneByEmail(id: string) {
+  async findOneById(id: string) {
     const user = await this.userModel.findById(id);
     if (user == null) {
       throw new HttpException('404 Not Found: User does not exist.', HttpStatus.NOT_FOUND);

@@ -1,6 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 import { Model } from 'mongoose';
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import { IUser } from '../users/interfaces/user.interface';
 import { UserDto } from '../users/dto/user.dto';
 import { UserSchema } from '../users/users.schema';
@@ -17,6 +17,7 @@ export class AuthService {
       secretOrKey = 'secret';
     const user = { email: userDto.email };
     const token = jwt.sign(user, secretOrKey, { expiresIn });
+    Logger.log('Token created');
     return {
       expires_in: expiresIn,
       access_token: token,

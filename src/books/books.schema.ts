@@ -27,6 +27,11 @@ export const BookSchema = new mongoose.Schema({
   pagecount: {
     type: Number,
   },
+  status: {
+    type: String,
+    enum: ['Want to Read', 'Currently Reading', 'Finished Read'],
+    required: true,
+  },
   rating: {
     type: Number,
   },
